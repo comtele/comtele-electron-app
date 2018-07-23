@@ -11,7 +11,6 @@ ipcMain.on("save-setup", (e, setupData) => {
   }
 
   var jsonData = JSON.stringify(setupData);
-  console.log(setupData);
 
   fs.writeFile("setup.json", jsonData, err => {
     if (err) {

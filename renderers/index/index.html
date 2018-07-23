@@ -53,7 +53,14 @@
                     <div class="input-field col m12 l6">
                         <i class="material-icons prefix">vpn_key</i>
                         <input placeholder="Cole sua chave da API aqui" id="api-key-input" type="text" class="validate">
-                        <label for="first_name">Chave da API</label>
+                        <label for="api-key-input">Chave da API</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col m12 l12">
+                        <i id="select-folder" class="material-icons prefix pointer-cursor">folder</i>
+                        <input id="select-folder-input" class="validate pointer-cursor" type="text" placeholder="Pasta de entrada dos arquivos">
+                        <label for="select-folder-input">Pasta de Entrada</label>
                     </div>
                 </div>
                 <div class="row">
@@ -77,7 +84,7 @@
 
     </div>
 
-    <script>        
+    <script>
         $ = require('jQuery')
         require('./index.js')
     </script>

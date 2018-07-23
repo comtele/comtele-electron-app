@@ -3,6 +3,7 @@ const { dialog, BrowserWindow } = require("electron").remote;
 
 ipcRenderer.on("load-setup", (e, data) => {
   $("#api-key-input").val(data.apiKey);
+  $("#select-folder-input").val(data.inputFolder);
 });
 
 ipcRenderer.on("default-error-message", (e, message) => {
@@ -46,5 +47,21 @@ $("#close-button").click(e => {
 });
 
 $("#save-setup-button").click(e => {
-  ipcRenderer.send("save-setup", { apiKey: $("#api-key-input").val() });
+  ipcRenderer.send("save-setup", {
+    apiKey: $("#api-key-input").val(),
+    inputFolder: $("#select-folder-input").val()
+  });
+});
+
+$("#select-folder, #select-folder-input").click(e => {
+  dialog.showOpenDialog(
+    {
+      properties: ["openFile", "openDirectory"]
+    },
+    openPath => {
+      if (openPath[0]) {
+        $("#select-folder-input").val(openPath[0]);
+      }
+    }
+  );
 });
