@@ -7,7 +7,6 @@ exports.sending = false;
 
 function sendMessages(inputFolder, apiKey) {
   setInterval(() => {
-    console.log(`running: ${this.sending}`);
     if (this.sending) return;
 
     this.sending = true;
