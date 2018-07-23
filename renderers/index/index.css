@@ -1,0 +1,21 @@
+.pointer-cursor {
+  cursor: pointer;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.drag-window {
+  -webkit-app-region: drag;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.input-medium {
+  width: 200px;
+}

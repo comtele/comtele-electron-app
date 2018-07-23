@@ -1,0 +1,22 @@
+{
+  "name": "comteleapp",
+  "version": "0.0.1",
+  "description": "App de envio de mensagens multiplataforma usando o serviço da Comtele",
+  "main": "app.js",
+  "scripts": {
+    "start": "./node_modules/.bin/electron ."
+  },
+  "author": "Diego Vieira",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^2.0.5",
+    "font-awesome": "^4.7.0",
+    "hammerjs": "^2.0.8",
+    "jQuery": "^1.7.4",
+    "material-design-icons": "^3.0.1",
+    "materialize-css": "^0.100.2"
+  },
+  "devDependencies": {
+    "electron-reload": "^1.2.5"
+  }
+}

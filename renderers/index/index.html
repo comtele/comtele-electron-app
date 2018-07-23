@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../../node_modules/materialize-css/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="../../node_modules/material-design-icons/iconfont/material-icons.css">
+    <link rel="stylesheet" href="index.css">
+
+    <title>Hello World</title>
+</head>
+
+<body>
+
+    <nav class="drag-window">
+        <div class="teal nav-wrapper">
+            <a class="brand-logo center">Comtele</a>
+        </div>
+    </nav>
+
+    <a id="close-button" class="btn-floating waves-effect waves-light teal close-button no-drag">
+        <div class="center-align">
+            <strong>X</strong>
+        </div>
+    </a>
+
+    <div class="row">
+        <div class="col s3">
+            <div class="collection">
+                <a id="show-dashboard-button" class="collection-item pointer-cursor">Dashboard</a>
+                <a id="show-setup-button" class="collection-item pointer-cursor active">Configurar</a>
+            </div>
+        </div>
+
+        <div class="col s9">
+
+            <div id="setup-component">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card teal">
+                            <div class="card-content white-text">
+                                <span class="card-title">Olá! Tudo bem?</span>
+                                <p>Aqui você pode configurar a sua chave de API, os locais onde o app irá buscar os arquivos
+                                    para envio, etc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col m12 l6">
+                        <i class="material-icons prefix">vpn_key</i>
+                        <input placeholder="Cole sua chave da API aqui" id="api-key-input" type="text" class="validate">
+                        <label for="first_name">Chave da API</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <button id="save-setup-button" class="btn waves-effect waves-light">
+                            <i class="material-icons left">done</i>Salvar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dashboard-component" class="hide">
+                <div class="row">
+                    <div class="col s12">
+                        Dashboard
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>        
+        $ = require('jQuery')
+        require('./index.js')
+    </script>
+
+    <script src="../../node_modules/hammerjs/hammer.min.js"></script>
+    <script src="../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+</body>
+
+</html>
