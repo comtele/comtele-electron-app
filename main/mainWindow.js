@@ -1,4 +1,4 @@
-const { BrowserWindow } = require("electron");
+const { app, BrowserWindow } = require("electron");
 const fs = require("fs");
 const path = require("path");
 const { TextMessageService, ReplyService } = require("comtele-sdk");
@@ -73,7 +73,10 @@ exports.createWindow = () => {
   });
 
   this.window.webContents.on("did-finish-load", () => {
-    fs.readFile("setup.json", "utf-8", (err, data) => {
+    var appDataPath = app.getPath("appData");
+    var fileName = path.join(appDataPath, "ComteleApp", "setup.json");
+
+    fs.readFile(fileName, "utf-8", (err, data) => {
       if (!err) {
         let parsedData = JSON.parse(data);
         this.window.webContents.send("load-setup", parsedData);

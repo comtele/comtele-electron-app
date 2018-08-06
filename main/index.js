@@ -1,5 +1,6 @@
 const { app, ipcMain } = require("electron");
 const fs = require("fs");
+const path = require("path");
 
 ipcMain.on("quit-app", (e, data) => {
   app.quit();
@@ -12,7 +13,10 @@ ipcMain.on("save-setup", (e, setupData) => {
 
   var jsonData = JSON.stringify(setupData);
 
-  fs.writeFile("setup.json", jsonData, err => {
+  var appDataPath = app.getPath("appData");
+  var fileName = path.join(appDataPath, "ComteleApp", "setup.json");
+
+  fs.writeFile(fileName, jsonData, err => {
     if (err) {
       e.sender.send("default-error-message", err.message);
     }

@@ -1,10 +1,12 @@
 const { app } = require("electron");
 const mainWindow = require("./main/mainWindow");
+const mainMenu = require("./main/menu");
 
 require("./main/index");
 
 app.on("ready", () => {
   mainWindow.createWindow();
+  mainMenu.createMenu();
 });
 
 // Quit when all windows are closed.
